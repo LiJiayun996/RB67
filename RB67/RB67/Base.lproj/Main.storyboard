@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RB67" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juv-TZ-q5g">
+                                <rect key="frame" x="177" y="762" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2FS-0K-Cm0"/>
+                                    <constraint firstAttribute="width" constant="60" id="eEe-R3-ngL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C0g-D8-h4X"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gjY-OC-gBR">
+                                <rect key="frame" x="20" y="56" width="374" height="438"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-fb-RKa">
+                                <rect key="frame" x="0.0" y="502" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="juv-TZ-q5g" secondAttribute="bottom" constant="40" id="83R-Bt-iaB"/>
+                            <constraint firstItem="juv-TZ-q5g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zCo-uo-vEB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="filterPicker" destination="wgu-fb-RKa" id="RzK-VC-LMB"/>
+                        <outlet property="previewView" destination="gjY-OC-gBR" id="2Tb-bX-7pU"/>
+                        <segue destination="geE-GS-asI" kind="presentation" identifier="showPhoto_Segue" id="lE1-Vb-hC0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="4bQ-f7-cex">
+            <objects>
+                <viewController id="geE-GS-asI" customClass="PreviewViewController" customModule="RB67" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hmZ-gO-4Zn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7es-MX-ACg">
+                                <rect key="frame" x="0.0" y="298.66666666666669" width="414" height="299.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="299" id="MaO-3S-9eG"/>
+                                    <constraint firstAttribute="width" constant="414" id="Win-qi-idJ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx6-1s-Zak">
+                                <rect key="frame" x="19" y="44" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="geE-GS-asI" eventType="touchUpInside" id="ahp-qi-Z2r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hST-bc-O4I">
+                                <rect key="frame" x="354" y="44" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="geE-GS-asI" eventType="touchUpInside" id="gKN-Mu-bS5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwc-aW-NSp">
+                                <rect key="frame" x="173" y="788" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Filter"/>
+                                <connections>
+                                    <action selector="clearFilter:" destination="geE-GS-asI" eventType="touchUpInside" id="rnW-sD-tLa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-Ad-iom">
+                                <rect key="frame" x="166" y="662" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Apply Sepia"/>
+                                <connections>
+                                    <action selector="applySepiaButtonPressed:" destination="geE-GS-asI" eventType="touchUpInside" id="sNq-Iv-lZ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjh-FY-cA3">
+                                <rect key="frame" x="172" y="694" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Apply Blur"/>
+                                <connections>
+                                    <action selector="applyBlurButtonPresed:" destination="geE-GS-asI" eventType="touchUpInside" id="MmQ-fI-WvY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-j9-Xhq">
+                                <rect key="frame" x="171" y="724" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Apply Noir"/>
+                                <connections>
+                                    <action selector="applyNoirButtonPressed:" destination="geE-GS-asI" eventType="touchUpInside" id="ay6-aO-KQF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXa-oo-REW">
+                                <rect key="frame" x="136" y="750" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Apply Process Effect"/>
+                                <connections>
+                                    <action selector="applyProcessEffectButtonPressed:" destination="geE-GS-asI" eventType="touchUpInside" id="Mb5-0t-GYV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="centerY" secondItem="hmZ-gO-4Zn" secondAttribute="centerY" id="K3i-XM-NZe"/>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="centerX" secondItem="hmZ-gO-4Zn" secondAttribute="centerX" id="RCJ-Pn-Kh4"/>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="centerX" secondItem="hmZ-gO-4Zn" secondAttribute="centerX" id="S7e-01-2zp"/>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="leading" secondItem="ui5-q2-xIK" secondAttribute="leading" id="UnE-gI-NwB"/>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="centerY" secondItem="hmZ-gO-4Zn" secondAttribute="centerY" id="Yjy-XU-sqQ"/>
+                            <constraint firstItem="7es-MX-ACg" firstAttribute="trailing" secondItem="ui5-q2-xIK" secondAttribute="trailing" id="eHp-sZ-58i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ui5-q2-xIK"/>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="7es-MX-ACg" id="ucT-3G-qc6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQj-wm-zNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="21"/>
+        </scene>
+    </scenes>
+</document>
